@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<link href="styles/styles.css" type="text/css" rel="stylesheet">
+	<script src="scripts/main.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="initMain()">
+	<header>
+		<a href="#"><h1>goethegym.net</h1></a>
+		<div  id="closebtn" class="closebtn" onclick="closeNav()"></div>
+		<nav>
+			<div class="icon" onclick="openNav()"><img src="images/bars.png" style="width: 100%;"></div>
+				<div id="navigation" class="overlay">
+					<div class="overlay-content">
+					<ul>
+						<li class="current"><a href="#">Start</a></li>
+						<li><a href="#">Informationen</a></li>
+						<li><a href="#">Förderverein</a></li>
+						<li><a href="#">Aktivitäten</a></li>
+						<li><a href="#">Personen</a></li>
+						<li><a href="#">Kontakt</a></li>
+						<li><a href="#">Downloads</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="slideshow" onclick="nextSlide()">
+			<ul id="slides">
+				<li class="current_slidepic">
+					<img src="media/haus.jpg" style="width: 100%;">
+				</li>
+				<li class="slidepic">
+					<img src="media/chor.jpg" style="width: 100%;">
+				</li>
+				<li class="slidepic">
+					<img src="media/circus.jpg" style="width: 100%;">
+				</li>
+				<li class="slidepic">
+					<img src="media/ags.jpg" style="width: 100%;">
+				</li>
+				<li class="slidepic">
+					<img src="media/blaeser.jpg" style="width: 100%;">
+				</li>
+			</ul>
+			<div style="text-align: center;">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+		</div>
+		<div class="button">
+		</div>
+		<div class="tilewrapper">
+			<a onclick="open1();" href="#" class="newstile" id="newstile1" destinationurl="beitrag.html">
+				<div class="image">
+					<img src="media/test.png" width="360px" heigh="360px">
+				</div>
+				<h3>Lange Überschrift</h3>
+				<article>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</article>
+			</a>
+			<a href="beitrag.html" class="newstile">
+				<div class="image">
+					<img src="media/test2.jpg" width="512px" heigh="512px">
+				</div>
+				<h3>Überschrift</h3>
+				<article>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</article>
+			</a>
+			<a href="beitrag.html" class="newstile">
+				<div class="image">
+					<img src="media/test3.jpg" width="512px" heigh="512px">
+				</div>
+				<h3>Sehr Sehr Sehr Sehr Lange Überschrift</h3>
+				<article>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.
+				</article>
+			</a>
+		</div>
+		<div id="beitrag1">
+			<div class="beitragimg">
+				<img class="beitrag-top" src="media/test.png">
+			</div>
+			<div class="beitragtext">
+			<div class="divider">
+				<p class="beitrag">Beitrag</p>
+				<p class="bilder">Bilder</p>
+			</div>
+			<h2>Überschrift</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<img src="media/test.png" class="picture-overview">
+			<img src="media/01.jpg" class="picture-overview">
+			<img src="media/02.jpg" class="picture-overview">
+			</div>
+		</div>
+		<div class="beitrag2">
+		</div>
+		<div class="beitrag3">
+		</div>
+	</main>
+	<div class="cookies" id="cookies">
+		<div class="cookiestext">
+			<p>Wir verwenden Cookies. <a href="#">Warum?</a></p>
+		</div>
+		<div class="cookiesok" onclick="closeCookies()">
+			<p>OK</p>
+		</div>
+	</div>
+	<footer>
+	</footer>
+</body>
+</html>
