@@ -2,7 +2,7 @@
 
 function openNav() {
     document.getElementById("navigation").style.width = "80%";
-    document.getElementById("closebtn").style.width = "20%";
+    document.getElementById("closebtn").style.width = "100%";
 }
 
 function closeNav() {
