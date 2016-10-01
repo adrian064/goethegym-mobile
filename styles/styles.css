@@ -43,7 +43,7 @@ header nav div.icon {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     left: 0;
     background-color: #fff;
@@ -76,6 +76,7 @@ header nav div.icon {
     width: 0;
     height: 100%;
     z-index: 2;
+    background-color: rgba(0,0,0,.5);
 }
 
 .overlay ul {
@@ -96,7 +97,7 @@ header nav div.icon {
     border-color: #808080;
 }
 
-.current a {
+.overlay .current a {
 	background-color: #6aa70a;
 	color: #fff;
 }
