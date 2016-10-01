@@ -10,11 +10,19 @@
 <body onload="initMain()">
 	<header>
 		<a href="#"><h1>goethegym.net</h1></a>
-		<div  id="closebtn" class="closebtn" onclick="closeNav()"></div>
 		<nav>
 			<div class="icon" onclick="openNav()"><img src="images/bars.png" style="width: 100%;"></div>
 				<div id="navigation" class="overlay">
 					<div class="overlay-content">
+					<ul>
+						<li><a href="#">Vertretungsplan</a></li>
+						<li><a href="#">Stundenplan</a></li>
+						<li><a href="#">Stundenplan Oberstufe</a></li>
+						<li><a href="#">Monatsplan</a></li>
+						<li><a href="#">Jahresübersicht</a></li>
+						<li><br></li>
+						<li><br></li>
+					</ul>
 					<ul>
 						<li class="current"><a href="#">Start</a></li>
 						<li><a href="#">Informationen</a></li>
@@ -23,10 +31,16 @@
 						<li><a href="#">Personen</a></li>
 						<li><a href="#">Kontakt</a></li>
 						<li><a href="#">Downloads</a></li>
+						<li><br></li>
+						<li><br></li>
+					</ul>
+					<ul>
+						<li><a href="#">Abmelden</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
+		<div  id="closebtn" class="closebtn" onclick="closeNav()"></div>
 	</header>
 	<main>
 		<div class="slideshow" onclick="nextSlide()">
