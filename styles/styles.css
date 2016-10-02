@@ -1,9 +1,44 @@
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../font/MaterialIcons-Regular.eot);
+	src: local('Material Icons'),
+	local('MaterialIcons-Regular'),
+	url(../font/MaterialIcons-Regular.woff2) format('woff2'),
+	url(../font/MaterialIcons-Regular.woff) format('woff'),
+	url(../font/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+	font-family: "Material Icons";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 28px;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "liga";
+	position: absolute;
+	top: 11px;
+	left: 11px;
+}
+
 body {
 	padding: 0;
 	margin: 0;
 	color: #555;
 	font-family: Arial;
 	overflow-y: scroll;
+	max-width: 100%;
+	overflow-x: hidden;
+	transition-duration: .5s;
 }
 
 header {
@@ -13,12 +48,14 @@ header {
 	color: #fff;
 	width: 100%;
 	height: 60px;
-	box-shadow: 0 0 3px gray;
+	box-shadow: 0 0 3px grey;
 	background-color: #d71400;
 	background-image: url(../images/noise.png);
 	overflow: hidden;
 	cursor: default;
-	z-index: 5;
+	z-index: 4;
+	transition-duration: .5s;
+	box-shadow: 0 1px 20px #444;
 }
 
 h1 {
@@ -29,14 +66,40 @@ h1 {
 	font-size: 36px;
 	color: white;
 	margin: 0;
-	transition-duration: .2s;
+	transition-duration: .5s;
 }
 
-header nav div.icon {
+.icon {
 	position: relative;
-	top: 17px;
-	left: 20px;
-	display: inline-block;
+	transition-duration: .5s;
+	font-size: 36px;
+	font-family: "Material Icons";
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "liga";
+	padding: 12px;
+	top: 12px;
+}
+
+#navicon {
+	display: block;
+}
+
+#closeicon {
+	display: none;
+}
+
+header p {
+	margin: 0;
 }
 
 .overlay {
@@ -44,12 +107,12 @@ header nav div.icon {
     width: 0;
     position: fixed;
     z-index: 3;
-    top: 0;
+    bottom: 0;
     left: 0;
     background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
-    color: #f1f1f1;
+    color: #555;
 }
 
 .overlay-content {
@@ -60,13 +123,195 @@ header nav div.icon {
     margin-top: 30px;
 }
 
+div.navspace {
+	height: 60px;
+	width: 100%;
+}
+
+.overlay p {
+	padding: 0;
+	margin: 0;
+	font-size: 28px;
+	color: #555;
+}
+
+.logout {
+	height: 48px;
+	width: 100%;
+	position: relative;
+	margin-bottom: 48px;
+	background-color: #555;
+	color: #fff;
+}
+
+.logout div:first-child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 48px;
+	overflow: hidden;
+}
+
+.logout div:first-child p {
+	color: #fff;
+	padding-top: 7px;
+	padding-left: 50px;
+}
+
+.logout div:last-child {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 50%;
+	height: 48px;
+	float: right;
+	background-color: #555;
+}
+
+.logout div:last-child p {
+	text-align: right;
+	padding-top: 7px;
+	padding-right: 50px;
+	color: #fff;
+}
+
+.logouticon {
+	color: #fff;
+	font-family: "Material Icons";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 28px;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "liga";
+	position: absolute;
+	top: 11px;
+	right: 11px;
+}
+
+@media screen and (max-width: 450px) {
+	.logout {
+		height: 74px;
+	}
+
+	.logout div:first-child {
+		width: 100%;
+	}
+
+	.logout div:last-child {
+		top: 48px;
+		width: 100%;
+		left: 0;
+	}
+
+	.logout div:last-child p {
+		text-align: left;
+		padding-left: 50px;
+	}
+
+	.logouticon {
+		left: 11px;
+	}
+}
+
+/*.logoutsmall {
+	height: 74px;
+	width: 100%;
+	position: relative;
+	margin-bottom: 48px;
+	background-color: #555;
+	color: #fff;
+}
+
+.logoutsmall div:first-child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 48px;
+	overflow: hidden;
+}
+
+.logoutsmall div:first-child p {
+	color: #fff;
+	padding-top: 7px;
+	padding-left: 50px;
+}
+
+.logoutsmall div:last-child {
+	position: absolute;
+	left: 0;
+	top: 48px;
+	width: 100%;
+	height: 48px;
+	float: right;
+	background-color: #555;
+}
+
+.logoutsmall div:last-child p {
+	text-align: left;
+	padding-top: 7px;
+	padding-left: 50px;
+	color: #fff;
+}
+
+.logouticonsmall {
+	color: #fff;
+	font-family: "Material Icons";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 28px;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "liga";
+	position: absolute;
+	top: 11px;
+	left: 11px;
+}*/
+
 .overlay a {
-    padding: 8px;
+    padding: 0;
+    margin: 0;
     text-decoration: none;
     font-size: 28px;
-    color: #808080;
-    display: block;
-    transition: 0.3s;
+    color: #555;
+    transition: 0.0s;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay a p {
+	position: absolute;
+	padding-left: 50px;
+	margin-top: 7px;
+
+}
+
+.navlink {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.overlay li {
+	display: block;
+    width: 100%;
+    height: 48px;
 }
 
 .closebtn {
@@ -74,7 +319,7 @@ header nav div.icon {
     top: 0;
     right: 0;
     width: 0;
-    height: 100%;
+    height: 130%;
     z-index: 2;
     background-color: rgba(0,0,0,.5);
 }
@@ -84,22 +329,35 @@ header nav div.icon {
     margin: 0;
     padding: 0;
     width: 100%;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0);
 }
 
-.overlay li a {
-    display: block;
-    color: #555;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-bottom: 10px;
-    border-color: #808080;
+.overlay li:nth-of-type(even) {
+	background-color: #eee;
 }
 
-.overlay .current a {
+.overlay li:last-child {
+	background-color: #fff;
+}
+
+.overlay .current div {
 	background-color: #6aa70a;
 	color: #fff;
+}
+
+.overlay .current p {
+	color: #fff;
+}
+
+@media screen and (max-width: 371px) {
+	.overlay li.twolines1 {
+		height: 74px;
+	}
+}
+
+@media screen and (max-width: 379px) {
+	.overlay li.twolines2 {
+		height: 74px;
+	}
 }
 
 #slides {
@@ -109,33 +367,104 @@ header nav div.icon {
     margin: 0px;
     list-style-type: none;
     top: 60px;
+    transition-duration: .5s;
 }
 
 .slidepic {
     position: absolute;
-    left: 0px;
+    margin-left: -100%;
     top: 0px;
     width: 100%;
     height: 100%;
-    opacity: 0;
     z-index: 1;
-
-    -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    transition: opacity 1s;
+    transition-duration: .5s;
 }
 
-.current_slidepic {
-    opacity: 1;
-    z-index: 2;
+#slide1 {
+	margin-left: 0;
+	z-index: 2;
+}
+
+#slide2 {
+	margin-left: 100%;
+	z-index: 2;
+}
+
+#sliderbg {
+	width: 100%;
+	height: 100%;
+	margin-top: 60px;
+}
+
+.currentdot {
+	width: 18px;
+	height: 18px;
+	background-color: #fff;
+	border-radius: 50%;
+	position: relative;
+	margin: 0;
+	top: 1px;
+	left: 1px;
+	box-shadow: 0 0 12px #000, 0 0 8px #555;
+}
+
+.otherdot {
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	border-radius: 50%;
+	position: relative;
+	margin: 0;
+	top: 4px;
+	left: 4px;
+	box-shadow: 0 0 12px #000, 0 0 8px #555;
+}
+
+#dots {
+	width: 120px;
+	height: 20px;
+	z-index: 3;
+	position: relative;
+	left: calc(50% - 60px);
+	top: -30px;
+}
+
+.dot {
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	float: left;
+	margin-left: 5px;
+}
+
+.dot:first-child {
+	margin-left: 0;
+}
+
+.warnung {
+	display: none;
+	width: 90%;
+	margin-left: calc(5% - 3px);
+	background-color: #DE5547;
+	border-width: 3px;
+	border-style: solid;
+	border-color: #BC3325;
+	border-radius: 3px;
+	margin-top: 50px;
+	color: #222;
+}
+
+.warnunginnen {
+	width: 90%;
+	height: 100%;
+	margin-left: 5%;
 }
 
 .tilewrapper {
 	width: 90%;
 	position: relative;
 	left: 5%;
-	top: 80px;
+	top: 0;
 	margin-bottom: 100px;
 }
 
@@ -182,17 +511,17 @@ header nav div.icon {
 	min-height: 235px;
 }
 
-#beitrag1 {
-	height: calc(100%-60px);
-	position: fixed;
-	top: 60px;
-	right: 0;
-	width: 0;
-	background-color: #fff;
-	min-height: 100%;
-    transition: 0.5s;
-    padding-bottom: 400px;
-    overflow: scroll;
+.article {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition-duration: .5s;
+    color: #555;
 }
 
 .picture-overview img {
@@ -225,20 +554,63 @@ header nav div.icon {
 	background-color: #6AA70A;
 	width: 100%;
 	color: #fff;
-	height: 51px;
+	height: 46px;
 	margin-top: -5px;
+	position: relative;
+	box-shadow: 0 2px 4px #aaa
+}
+
+.dividermitte {
+	display: inline-block;
+	height: 38px;
+	margin-top: 0;
+	width: 4px;
+	background-color: #fff;
+}
+
+.dividerunten {
+	height: 4px;
+	width: calc(50% + 2px);
+	background-color: #fff;
+	position: relative;
+	margin-top: -4px;
+	float: left;
+	transition-duration: .5s;
 }
 
 .divider p {
 	display: inline-block;
 	width: 50%;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	font-size: 36px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 30px;
+	height: 30px;
 	color: #fff;
-	float: left;
 	text-align: center;
 	margin: 0;
+}
+
+.divider p:first-child {
+	float: left;
+}
+
+.divider p:last-child {
+	float: right;
+}
+
+.gallerie {
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 30px;
+	height: 50px;
+	transition-duration: .5s;
+	display: none;
+}
+
+.inhalt {
+	width: 90%;
+	margin-left: 5%;
+	transition-duration: .5s;
 }
 
 .cookies {
@@ -248,30 +620,34 @@ header nav div.icon {
 	height: 40px;
 	background-color: #fff;
 	font-size: 20px;
+	box-shadow: 0 -1px 6px #aaa
+	z-index: 4;
 }
 
 .cookiestext {
-	border-top: 300px;
-	border-color: #555;
 	text-align: center;
 	width: 65%;
-	left: 0;
-	margin-top: -15px;
 	color: #555;
+	height: 40px;
+	display: inline-block;
 }
 
 .cookiestext a {
 	color: #6AA70A;
 	text-decoration: none;
-	display: inline-block;
+}
+
+.cookiestext p {
+	margin: 0;
+	padding-top: 6px;
 }
 
 .cookiesok {
-	display: inline-block;
 	width: 35%;
 	background-color: #6AA70A;
-	float: right;
-	margin-top: -50px;
+	position: absolute;
+	right: 0;
+	top: 0;
 	color: #fff;
 	height: 40px;
 	text-align: center;
@@ -294,7 +670,7 @@ header nav div.icon {
 		left: 45px;
 	}
 
-	header nav div.icon {
+	header div.icon {
 		top: 13px;
 		left: 13px;
 		width: 20px;
@@ -305,8 +681,16 @@ header nav div.icon {
 		font-size: 24px;
 	}
 
+	.overlay p {
+		font-size: 24px;
+	}
+
 	#slides {
 		top: 40px;
+	}
+
+	#sliderbg {
+		margin-top: 40px;
 	}
 
 	.cookies {
@@ -316,12 +700,58 @@ header nav div.icon {
 
 	.cookiestext {
 		width: 75%;
-		margin-top: -10px;
+	}
+
+	.cookiestext p {
+		padding-top: 3px;
 	}
 
 	.cookiesok {
 		width: 25%;
-		margin-top: -38px;
 		height: 30px;
+	}
+
+	.overlay {
+		height: 100%;
+	}
+
+	.material-icons {
+		font-size: 24px;
+	}
+
+	.overlay li {
+		height: 44px;
+	}
+
+	div.navspace {
+		height: 45px;
+	}
+
+	.icon {
+		font-size: 29px;
+		padding: 8px;
+		top: 8px;
+	}
+
+	.logouticon {
+		font-size: 24px;
+	}
+
+	.divider {
+		height: 40px;
+	}
+
+	.divider p {
+		font-size: 24px;
+	}
+}
+
+@media screen and (max-width: 299px) {
+	.warnung {
+		display: block;
+	}
+
+	.tilewrapper {
+		top: 10px;
 	}
 }

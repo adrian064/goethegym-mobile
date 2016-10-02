@@ -5,71 +5,179 @@
 	<meta charset="UTF-8">
 	<link href="styles/styles.css" type="text/css" rel="stylesheet">
 	<script src="scripts/main.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body onload="initMain()">
 	<header>
 		<a href="#"><h1>goethegym.net</h1></a>
-		<nav>
-			<div class="icon" onclick="openNav()"><img src="images/bars.png" style="width: 100%;"></div>
-				<div id="navigation" class="overlay">
-					<div class="overlay-content">
-					<ul>
-						<li><a href="#">Vertretungsplan</a></li>
-						<li><a href="#">Stundenplan</a></li>
-						<li><a href="#">Stundenplan Oberstufe</a></li>
-						<li><a href="#">Monatsplan</a></li>
-						<li><a href="#">Jahresübersicht</a></li>
-						<li><br></li>
-						<li><br></li>
-					</ul>
-					<ul>
-						<li class="current"><a href="#">Start</a></li>
-						<li><a href="#">Informationen</a></li>
-						<li><a href="#">Förderverein</a></li>
-						<li><a href="#">Aktivitäten</a></li>
-						<li><a href="#">Personen</a></li>
-						<li><a href="#">Kontakt</a></li>
-						<li><a href="#">Downloads</a></li>
-						<li><br></li>
-						<li><br></li>
-					</ul>
-					<ul>
-						<li><a href="#">Abmelden</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<div  id="closebtn" class="closebtn" onclick="closeNav()"></div>
+		<div onclick="openNav()" id="navicon">
+			<p>
+				<i class="icon">&#xE5D2;</i>
+			</p>
+		</div>
+		<div onclick="closeAll()" id="closeicon">
+			<p>
+				<i class="icon">&#xE5C4;</i>
+			</p>
+		</div>
 	</header>
+	<nav>	
+		<div id="navigation" class="overlay">
+			<div class="overlay-content">
+				<div class="navspace"></div>
+				<div class="logout" onload="nameLength()">
+					<div><i class="material-icons">&#xE7FD;</i><p id="benutzername">Benutzernamelang</p></div>
+					<div><p>Abmelden</p><i class="logouticon">&#xE8AC;</i></div>
+				</div>
+				<ul>
+					<li>
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE2C4;</i>
+								<p>Vertretungsplan</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE2C4;</i>
+								<p>Stundenplan</p>
+							</div>
+						</a>
+					</li>
+					<li class="twolines1">
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE2C4;</i>
+								<p>Stundenplan Oberstufe</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE2C4;</i>
+								<p>Monatsplan</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE2C4;</i>
+								<p>Jahresübersicht</p>
+							</div>
+						</a>
+					</li>
+					<li><br></li>
+				</ul>
+				<ul>
+					<li class="current">
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE88A;</i>
+								<p>Start</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE88F;</i>
+								<p>Informationen</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE0AF;</i>
+								<p>Förderverein</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE52F;</i>
+								<p>Aktivitäten</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE7EF;</i>
+								<p>Personen</p>
+							</div>
+						</a>
+					</li>
+					<li class="twolines2">
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE0D1;</i>
+								<p>Kontakt und Impressum</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="navlink">
+								<i class="material-icons">&#xE2C0;</i>
+								<p>Downloads</p>
+							</div>
+						</a>
+					</li>
+					<li><br></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div  id="closebtn" class="closebtn" onclick="closeNav()"></div>
 	<main>
 		<div class="slideshow" onclick="nextSlide()">
 			<ul id="slides">
-				<li class="current_slidepic">
+				<li class="slidepic" id="slide1">
 					<img src="media/haus.jpg" style="width: 100%;">
 				</li>
-				<li class="slidepic">
+				<li class="slidepic" id="slide2">
 					<img src="media/chor.jpg" style="width: 100%;">
 				</li>
-				<li class="slidepic">
+				<li class="slidepic" id="slide3">
 					<img src="media/circus.jpg" style="width: 100%;">
 				</li>
-				<li class="slidepic">
+				<li class="slidepic" id="slide4">
 					<img src="media/ags.jpg" style="width: 100%;">
 				</li>
-				<li class="slidepic">
+				<li class="slidepic" id="slide5">
 					<img src="media/blaeser.jpg" style="width: 100%;">
 				</li>
 			</ul>
-			<div style="text-align: center;">
-				<span class="dot"></span>
-				<span class="dot"></span>
-				<span class="dot"></span>
-				<span class="dot"></span>
-				<span class="dot"></span>
-			</div>
+			<img src="images/sliderbg.jpg" id="sliderbg" width="16px" height="9px">
 		</div>
-		<div class="button">
+		<div id="dots">
+				<div class="dot">
+					<div id="dot1" class="currentdot"></div>
+				</div>
+				<div class="dot">
+					<div id="dot2" class="otherdot"></div>
+				</div>
+				<div class="dot">
+					<div id="dot3" class="otherdot"></div>
+				</div>
+				<div class="dot">
+					<div id="dot4" class="otherdot"></div>
+				</div>
+				<div class="dot">
+					<div id="dot5" class="otherdot"></div>
+				</div>
+			</div>
+		<div class="warnung">
+			<div class="warnunginnen">
+				<h3>Warnung</h3>
+				<p>Die Fensterbreite beträgt weniger als 300px. Deshalb werden einige Inhalte unter Umständen nicht vollständig angezeigt.</p>
+			</div>
 		</div>
 		<div class="tilewrapper">
 			<a onclick="open1();" href="#" class="newstile" id="newstile1" destinationurl="beitrag.html">
@@ -109,25 +217,31 @@
 				</article>
 			</a>
 		</div>
-		<div id="beitrag1">
+		<div class="article" id="beitrag1">
+			<div class="navspace"></div>
 			<div class="beitragimg">
 				<img class="beitrag-top" src="media/test.png">
 			</div>
 			<div class="beitragtext">
-			<div class="divider">
-				<p class="beitrag">Beitrag</p>
-				<p class="bilder">Bilder</p>
-			</div>
-			<h2>Überschrift</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<img src="media/test.png" class="picture-overview">
-			<img src="media/01.jpg" class="picture-overview">
-			<img src="media/02.jpg" class="picture-overview">
+				<div class="divider">
+					<p class="beitrag" onclick="zuInhalt1()">Beitrag</p>
+					<p class="bilder" onclick="zuGallerie1()">Bilder</p>
+				</div>
+				<div class="dividerunten" id="dividerunten1"></div>
+				<div class="inhalt" id="inhalt1">
+					<h2>Überschrift</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="gallerie" id="gallerie1">
+					<img src="media/test.png" class="picture-overview">
+					<img src="media/01.jpg" class="picture-overview">
+					<img src="media/02.jpg" class="picture-overview">
+				</div>
 			</div>
 		</div>
 		<div class="beitrag2">
