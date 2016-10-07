@@ -1,0 +1,118 @@
+@media screen and (orientation: landscape){
+	#slides {
+		width: 62%;
+		left: 19%;
+	}
+
+	#sliderbg {
+		width: 62%;
+		margin-left: 19%;
+	}
+
+	.overlay {
+		width: 45%;
+	}
+
+	.newstile {
+		width: 48%;
+		float: left;
+		margin-bottom: 40px;
+	}
+
+	.newstile:nth-child(even) {
+		margin-left: 4%;
+	}
+
+	.beitrag-top {
+		min-height: 100%;
+		min-width: 100%;
+		position: absolute;
+		z-index: -5;
+	}
+
+	.beitragimg {
+		width: 30%;
+		height: 100%;
+		float: right;
+		overflow: hidden;
+	}
+
+	.beitragimg img {
+		height: 100px;
+	}
+
+	.beitragtext {
+		width: 70%;
+		float: left;
+		background-color: #fff;
+		height: 100%;
+	}
+
+	.divider p {
+		width: 25%;
+	}
+
+	.beitragtext p {
+		width: 70%;
+	}
+
+	.beitrag {
+		width: 200px;
+	}
+
+	@media screen and (max-width: 890px) {
+
+		.overlay li {
+			height: 44px;
+		}
+
+		.logouticon {
+			font-size: 24px;
+		}
+
+		.overlay a {
+			font-size: 24px;
+		}
+
+		.overlay p {
+			font-size: 24px;
+		}
+
+		#logout {
+			height: 74px;
+		}
+
+		#logout div:first-child {
+			width: 100%;
+		}
+
+		#logout div:last-child {
+			top: 48px;
+			width: 100%;
+			left: 0;
+		}
+
+		#logout div:last-child p {
+			text-align: left;
+			padding-left: 50px;
+		}
+
+		#logouticon {
+			left: 11px;
+		}
+
+	}
+
+	@media screen and (max-width: 659px) {
+		.overlay li.twolines1 {
+			height: 74px;
+		}
+	} 
+
+	@media screen and (max-width: 674px) {
+		.overlay li.twolines2 {
+			height: 74px;
+		}
+	}	
+
+}

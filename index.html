@@ -4,6 +4,7 @@
 	<title></title>
 	<meta charset="UTF-8">
 	<link href="styles/styles.css" type="text/css" rel="stylesheet">
+	<link href="styles/widescreen.css" type="text/css" rel="stylesheet">
 	<script src="scripts/main.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
@@ -25,9 +26,9 @@
 		<div id="navigation" class="overlay">
 			<div class="overlay-content">
 				<div class="navspace"></div>
-				<div class="logout" onload="nameLength()">
+				<div id="logout" onload="nameLength()">
 					<div><i class="material-icons">&#xE7FD;</i><p id="benutzername">Benutzernamelang</p></div>
-					<div><p>Abmelden</p><i class="logouticon">&#xE8AC;</i></div>
+					<div><p>Abmelden</p><i id="logouticon">&#xE8AC;</i></div>
 				</div>
 				<ul>
 					<li>
@@ -134,9 +135,9 @@
 			</div>
 		</div>
 	</nav>
-	<div  id="closebtn" class="closebtn" onclick="closeNav()"></div>
+	<div  id="closebtn" class="closebtn" onclick="closeNav();"></div>
 	<main>
-		<div class="slideshow" onclick="nextSlide()">
+		<div class="slideshow">
 			<ul id="slides">
 				<li class="slidepic" id="slide1">
 					<img src="media/haus.jpg" style="width: 100%;">
@@ -179,74 +180,378 @@
 				<p>Die Fensterbreite beträgt weniger als 300px. Deshalb werden einige Inhalte unter Umständen nicht vollständig angezeigt.</p>
 			</div>
 		</div>
-		<div class="tilewrapper">
-			<a onclick="open1();" href="#" class="newstile" id="newstile1" destinationurl="beitrag.html">
+		<div class="tilewrapper" id="tilewrapper">
+			<a onclick="openarticle(1);" href="#" class="newstile" id="newstile1">
 				<div class="image">
-					<img src="media/test.png" width="360px" heigh="360px">
+					<img src="temp/news/mensaeroeffnung/teaser.jpg" width="360px" heigh="360px">
 				</div>
-				<h3>Lange Überschrift</h3>
+				<h3>Mensaeröffnung</h3>
 				<article>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.
+					Schüler, Lehrer und Eltern des Goethegymnasiums können jubeln. Mit Beginn des Schuljahres konnte die neue Mensa eröffnet werden. Pünktlich am 11.08.2016 konnten die Essenteilnehmer in den neuen Räumlichkeiten ihr Essen einnehmen. Mit dem Goethe-Geburtstag und unserem eigenen 25-jährigen Bestehen war nun an 26. August die offizielle Eröffnung. Von den Osterferien bis zum Ende der Sommerferien, in nur 4 Monaten, wurde die Mensa komplett saniert.
 				</article>
 			</a>
-			<a href="beitrag.html" class="newstile">
+			<a onclick="openarticle(2)" href="#" class="newstile" id="newstile2">
 				<div class="image">
-					<img src="media/test2.jpg" width="512px" heigh="512px">
+					<img src="temp/news/stolpersteine/teaser.jpg" width="360px" heigh="360px">
 				</div>
-				<h3>Überschrift</h3>
+				<h3>Stolpersteingeschichten</h3>
 				<article>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Der Eckhausverlag stellte am 14.09.2016 sein neues Buch vor und übergab Weimarer Schulen feierlich Klassensätze für den Unterricht. Die Schicksale der Opfer des Holocaust nicht zu vergessen, das ist Grundlage der Initiative "Stolpersteine", die der Bildhauer Gunter Demnig 2008 in Weimar begann. Seit damals wurden 24 solcher Steine zum Gedenken an die jüdischen Menschen, die in der Zeit des Nationalsozialismus ermordet wurden, vor deren damaligen Häusern verlegt.
 				</article>
 			</a>
-			<a href="beitrag.html" class="newstile">
+			<a onclick="openarticle(3)" href="#" class="newstile" id="newstile3">
 				<div class="image">
-					<img src="media/test3.jpg" width="512px" heigh="512px">
+					<img src="temp/news/frankreichaustausch/teaser.jpg" width="360px" heigh="360px">
 				</div>
-				<h3>Sehr Sehr Sehr Sehr Lange Überschrift</h3>
+				<h3>Frankreichaustausch: Ein Reisebericht</h3>
 				<article>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.
+					[...] Während unseres Rundganges zeigte man uns auch einen großen Raum, in dem Schüler unter Aufsicht Wäsche waschen, bügeln und Stickereien auf Tüchern anfertigen. Im Nebenraum backen Schüler croissants und Plätzchen, die sie an bestimmten Tagen an ihre Mitschüler verkaufen. Mit diesen Tätigkeiten will man die Kinder, die eine Lernschwäche aufweisen, auf das zukünftige Leben vorbereiten. Nach der Besichtigung begann die Arbeit an unserem gemeisamen Projekt [...]
+				</article>
+			</a>
+			<a onclick="openarticle(4);" href="#" class="newstile" id="newstile4">
+				<div class="image">
+					<img src="temp/news/abiturpreis/teaser.jpg" width="360px" heigh="360px">
+				</div>
+				<h3>Abiturpreis Sozialkunde</h3>
+				<article>
+					Daphne wurde heute mit dem 2. Platz beim Abiturpreis Sozialkunde der Deutschen Vereinigung für Politische Bildung (aller Thüringer Schulen) im Thüringer Landtag ausgezeichnet. [...] "Der Thüringer Abiturpreis zählt zu den wichtigsten Auszeichnungen für unsere Schülerinnen und Schüler. Er ist ein Gradmesser unserer hohen Bildungsqualität und steht für Spitzenleistungen." Das erklärte heute (Dienstag) Landtagspräsident Christian Carius anlässlich der Verleihung des Abiturpreises 2016. [...]
+				</article>
+			</a>
+			<a onclick="openarticle(5);" href="#" class="newstile" id="newstile5">
+				<div class="image">
+					<img src="temp/news/gutmannshausen/teaser.jpg" width="360px" heigh="360px">
+				</div>
+				<h3>Circus Gaudimus in Gutmannshausen</h3>
+				<article>
+					Im Juni  standen für unseren Circus Gaudimus mehrere Auftritte an. Neben der Abitaufe waren die Schülerinnen und Schüler z.B. auch zum Betriebsfest der AGRAR-Genossenschaft Gutmannshausen eingeladen. Wie immer konnten die Circus-Mitglieder ihre Professionalität nachweisen und zeigten den Gästen einen Auszug aus verschiednen Programmen. Akrobatik, Tanz, Einradfahren und viele andere Attraktionen wurden von den Gästen begeistert aufgenommen.
+				</article>
+			</a>
+			<a onclick="openarticle(6);" href="#" class="newstile" id="newstile6">
+				<div class="image">
+					<img src="temp/news/omri-vitis/teaser.jpg" width="360px" heigh="360px">
+				</div>
+				<h3>Omri Vitis und Guy Strier im Goethegymnasium</h3>
+				<article>
+					Zwei junge Musiker aus Israel haben auf ihrer Konzerttour durch Thüringen mit öffentlichen Konzerten und Schulkonzerten, unterstützt durch die Thüringer Staatskanzlei Erfurt, auch das Goethegymnasium in Weimar besucht. Gestern erlebten 170 Schülerinnen und Schüler der 10. Klassen und der Kurse 11 an unserem Gymnasium ein besonderes Konzert mit selbst geschriebenen Songs der beiden Künstler aber auch mit Klassikern von Bob Dylan oder den Rolling Stones. [...]
+				</article>
+			</a>
+			<a onclick="openarticle(7);" href="#" class="newstile" id="newstile7">
+				<div class="image">
+					<img src="temp/news/volleyball/teaser.jpg" width="360px" heigh="360px">
+				</div>
+				<h3>Podest-Platz erkämpft!</h3>
+				<article>
+					Am Mittwoch, den 21.09.2016 wurden in der Asbach-Halle die Stadtausscheide Jugend trainiert für Olympia in der Disziplin Volleyball ausgetragen. Das Goethegymnasium war mit 2 Mannschaften in der Wettkampfklasse II vertreten, von der leider nur eine vollzählig erschienen war. So lag es an den Jungen der Klassenstufe 8 um Teamkapitän Felix Casper eine Platzierung gegen die Konkurrenz von Schiller und Humboldt zu erkämpfen. [...]
+				</article>
+			</a>
+			<a onclick="openarticle(8);" href="#" class="newstile" id="newstile8">
+				<div class="image">
+					<img src="temp/news/anders/teaser.jpg" width="360px" heigh="360px">
+				</div>
+				<h3>Vorstellung der Berufsberaterin Frau Anders</h3>
+				<article>
+					Individuelle Beratung zur Studien- und Berufswahl, Entscheidungshilfe<br>
+					- Studien- und Berufswahltests<br>
+					- Information zu Studium, Ausbildung und Arbeitsmarktperspektiven<br>
+					- Informationen über Zulassungsverfahren und Bewerbungsmodalitäten der Hochschulen
+					- Vermittlung in duale Studiengänge und Berufsausbildung<br>
+					- Hilfe bei der Erstellung der Bewerbungsunterlagen<br>
+					[...]
 				</article>
 			</a>
 		</div>
 		<div class="article" id="beitrag1">
 			<div class="navspace"></div>
-			<div class="beitragimg">
-				<img class="beitrag-top" src="media/test.png">
+			<div class="beitragimg" id="beitragimg1"><img class="beitrag-top" src="temp/news/mensaeroeffnung/bg.jpg"></div>
+			<div class="teasers" id="teasers1">
+				<div class="teasersinnen">
+					<img src="temp/news/mensaeroeffnung/teaser.jpg" class="picture-overview" onclick="openGallery(1,1)">
+					<img src="temp/news/mensaeroeffnung/gallerie/teaser2.jpg" class="picture-overview" onclick="openGallery(1,2)">
+					<img src="temp/news/mensaeroeffnung/gallerie/teaser3.jpg" class="picture-overview" onclick="openGallery(1,3)">
+					<img src="temp/news/mensaeroeffnung/gallerie/teaser4.jpg" class="picture-overview" onclick="openGallery(1,4)">
+				</div>
+			</div>
+			<div class="galleriebg" id="galleriebg1" onclick="closeGallery(1)"></div>
+			<div class="gallerie" id="gallerie1">
+				<img class="gimgm" src="temp/news/mensaeroeffnung/bg.jpg" id="gimg11">
+				<img class="gimgr" src="temp/news/mensaeroeffnung/gallerie/2.png" id="gimg12">
+				<img class="gimgr" src="temp/news/mensaeroeffnung/gallerie/3.jpg" id="gimg13">
+				<img class="gimgr" src="temp/news/mensaeroeffnung/gallerie/4.jpg" id="gimg14">
 			</div>
 			<div class="beitragtext">
-				<div class="divider">
-					<p class="beitrag" onclick="zuInhalt1()">Beitrag</p>
-					<p class="bilder" onclick="zuGallerie1()">Bilder</p>
-				</div>
-				<div class="dividerunten" id="dividerunten1"></div>
 				<div class="inhalt" id="inhalt1">
-					<h2>Überschrift</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-				<div class="gallerie" id="gallerie1">
-					<img src="media/test.png" class="picture-overview">
-					<img src="media/01.jpg" class="picture-overview">
-					<img src="media/02.jpg" class="picture-overview">
+					<h2>Eröffnung der neuen Mensa</h2>
+					<p>
+					Schüler, Lehrer und Eltern des Goethegymnasiums können jubeln. Mit Beginn des Schuljahres konnte die neue Mensa eröffnet werden. Pünktlich	am 11.08.2016 konnten die Essenteilnehmer in den neuen Räumlichkeiten ihr Essen einnehmen.
+					</p>
+					<p>
+					Mit dem Goethe-Geburtstag und unserem eigenen 25-jährigen Bestehen war nun an 26. August die offizielle Eröffnung. Von den Osterferien bis zum Ende der Sommerferien, 
+					in nur 4 Monaten, wurde die Mensa komplett saniert.	Alle Schüler, Lehrer, Eltern und auch viele Ehrengäste waren am Freitag zu einem Hoffest in der Amalienstraße eingeladen. Unser Circus Gaudimus, der Schulchor "Die Ameisenkinder" und 	viele weitere Darsteller bildeten einen würdigen Rahmen für die Veranstaltung. Der Wohnstätte-Geschäftsführer Herr Carstens blickte auf die schwierige Aufgabe zurück. Er freute sich zu guter letzt wie alle Anwesenden, dass trotz einiger Schwierigkeiten alles zum Termin fertig war und übergab der Schülervetretung symbolisch den Schlüssel für die neue Mensa.
+					</p>
+					<p>
+					Die Mensa hat nun den Namen "Wolfgang", unschwer abzuleiten woher dieser Name kommt. In den Vormittagsstunden wird der hintere Raum des Gebäudes, er heißt im übrigen "Studio_G",	teilweise für Schulunterricht genutzt, eine Lösung die gefunden werden musste, um die Probleme mit den Raumkapazitäten im Haupthaus in den Griff zu bekommen. Die Schüler unseres Gymnasiums werden hoffentlich die neue Mensa gut annehmen. Die Firma Dussmann, als Essenanbieter wird uns dabei immer hilfreich zur Seite stehen.
+					</p>
+					<p>
+					Vielen Dank von hier aus an die Wohnstätte Weimar, dem Architekturbüro SIGMAPLAN, der Stadtverwaltung Weimar und vor allem ein großes DANKESCHÖN an die vielen Firmen, 
+					die es möglich gemacht haben, dass wir im August eine sanierte Mensa hatten.
+					</p>
 				</div>
 			</div>
 		</div>
-		<div class="beitrag2">
+		<div class="article" id="beitrag2">
+			<div class="navspace"></div>
+			<div class="beitragimg" id="beitragimg2"><img class="beitrag-top" src="temp/news/stolpersteine/bg.jpg"></div>
+			<div class="teasers" id="teasers2">
+				<div class="teasersinnen">
+					<img src="temp/news/stolpersteine/teaser.jpg" class="picture-overview" onclick="openGallery(2,1)">
+				</div>
+			</div>
+			<div class="galleriebg" id="galleriebg2" onclick="closeGallery(2)"></div>
+			<div class="gallerie" id="gallerie2">
+				<img class="gimgm" src="temp/news/stolpersteine/bg.jpg" id="gimg21">
+			</div>
+			<div class="beitragtext">
+				<div class="inhalt" id="inhalt2">
+					<h2>Stolpersteingeschichten</h2>
+					<p>
+					<i>„Erinnerung gibt Leben zurück. Sie ist der Nährboden für künftiges Handeln.“</i>
+					</p>
+					<p>
+					Der Eckhausverlag stellte am 14.09.2016 sein neues Buch vor und übergab Weimarer Schulen feierlich Klassensätze für den Unterricht.	Die Schicksale der Opfer des Holocaust nicht zu vergessen, das ist Grundlage der Initiative "Stolpersteine", die der Bildhauer Gunter Demnig 2008 in Weimar begann.	Seit damals wurden 24 solcher Steine zum Gedenken an die jüdischen Menschen, die in der Zeit des Nationalsozialismus ermordet wurden, vor deren damaligen Häusern verlegt.
+					</p>
+					<p>
+					Der Eckhaus- Verlag unterstützt diese Initiative und brachte jetzt ein Buch heraus, welches 16 dieser schrecklichen Schicksale vereint. Dieses Buch ist u.a. für Schüler 		gedacht,  um ihnen diese furchtbare Zeit nahe zu bringen. Zahlen ermordeter Juden sind das Eine, persönliche Schicksale jedoch in unserer Stadt, vielleicht direkt in der 		Straße um die Ecke- das beeindruckt und macht betroffen.
+					</p>
+					<p>
+					<b>Nie wieder darf so etwas passieren!</b>
+					</p>
+					<p>
+					Deshalb bin ich froh, als Mitglied des Kammerchores unserer Schule, Teil der Präsentationsveranstaltung gewesen zu sein.  Wir sangen jüdische Lieder aus unserem 		Repertoire, die wir im letzten Jahr schon in Israel gesungen haben.
+					</p>
+					<p>
+					Sebastian Krumbiegel von den Prinzen, seit je her ein engagierter Sänger gegen Rechts, beeindruckte uns mit seinen Liedern. Außerdem stammt das Geleitwort im Buch von ihm.	Weimarer Sponsoren machten es möglich, dass 10 Schulen unserer Stadt je einen Klassensatz erhielten, ebenso die Tourist-Information Weimar.	Aktuelle Ereignisse in unserem Land zeigen, wie wichtig jedes noch so kleine Zeichen ist, welches wir setzen und damit sagen: <b>Nie wieder!</b>
+					</p>
+					<p style="text-align: right;">
+					<i>Annegret Fischer A18d</i>
+					</p>
+				</div>
+			</div>
 		</div>
-		<div class="beitrag3">
+		<div class="article" id="beitrag3">
+			<div class="navspace"></div>
+			<div class="beitragimg" id="beitragimg3"><img class="beitrag-top" src="temp/news/frankreichaustausch/bg.jpg"></div>
+			<div class="teasers" id="teasers3">
+				<div class="teasersinnen">
+					<img src="temp/news/frankreichaustausch/teaser.jpg" class="picture-overview" onclick="openGallery(3,1)">
+					<img src="temp/news/frankreichaustausch/gallerie/teaser2.jpg" class="picture-overview" onclick="openGallery(3,2)">
+				</div>
+			</div>
+			<div class="galleriebg" id="galleriebg3" onclick="closeGallery(3)"></div>
+			<div class="gallerie" id="gallerie3">
+				<img class="gimgm" src="temp/news/frankreichaustausch/bg.jpg" id="gimg31">
+				<img class="gimgr" src="temp/news/frankreichaustausch/gallerie/2.jpg" id="gimg32">
+			</div>
+			<div class="beitragtext">
+				<div class="inhalt" id="inhalt3">
+					<h2>Frankreich-Austausch</h2>
+					<p>
+					Schülerbericht zum Schüleraustausch Blois mit Weimar vom 26.05. - 02.06. 2016 zwischen 
+					dem Goethegymnasium und dem collège LES PROVINCES
+					</p>
+					<p>
+					Wir sind am 26. 05. um 06:10 Uhr vor dem Eingangstor des Goethegymnasiums in Weimar  leicht verspätet abgefahren, weil wir auf eine Schülerin warten mussten, die verschlafen hatte. Wir haben während der vierzehnstündigen Busreise 6 Pausen von jeweils 15- 20 min eingelegt und sind mit relativ gutem Verkehr vor dem collège LES PROVINCES in Blois um halb neun angekommen. Dort warteten bereits die französischen corres mit ihren Familien auf uns. Danach sind alle Deutschen mit ihren corres in ihr neues Zuhause gefahren. Am nächsten Morgen hatte die Schule für uns einen kleinen Empfang organisiert. Die Schulleiterin, Mme Branchu, begrüßte uns und stellte uns ihre Schule vor. Dies geschah natürlich auf Französisch-  einige Schüler übersetzten. Es wurde uns unter anderem auch erzählt, dass junge Menschen mit einer körperlichen Behinderung bzw. mit Problemen bei der normalen Aufnahme des Unterrichtsstoffes mithilfe moderner Technik und geschultem Personal einen festen Platz an dieser Schule haben. Während unseres Rundganges zeigte man uns auch einen großen Raum, in dem Schüler unter Aufsicht Wäsche waschen, bügeln und Stickereien auf Tüchern anfertigen. Im Nebenraum backen Schüler croissants und Plätzchen, die sie an bestimmten Tagen an ihre Mitschüler verkaufen. Mit diesen Tätigkeiten will man die Kinder, die eine Lernschwäche aufweisen, auf das zukünftige Leben vorbereiten. Nach der Besichtigung begann die Arbeit an unserem gemeisamen Projekt: die Erstellung eines deutsch-französischen Kochbuches. Hierzu hatten wir bereits in Weimarmit unseren französischen Partnern gearbeitet. Die erste Gruppe hat zuerst an den Computern gearbeitet, für eine Stunde, und in der Zwischenzeit hat die zweite Gruppe das Aufgabenheftchen für die Besichtigung des Wohnhauses von Leonardo da Vinci in Amboise bekommen und sich mit den zu lösenden Aufgaben beschäftigt. Am Nachmittag wurde uns in einer kleinen Führung das Schloss von Blois vorgestellt. Danach mussten wir das Stadtzentrum selbst erkunden und dabei einen Fragebogen ausfüllen. Hilfe bekamen wir dabei von unseren corres.
+					</p>
+					<p>
+					Am Samstag war Tag der offenen Tür in der Schule. Einige Schüler schauten mit ihren corres vorbei. Ansonsten waren Unternehmungen in den Gastfamilien angesagt. Einige von uns fuhren sogar bis Paris. Am Montag, um 8:00 Uhr, haben wir uns auf dem Schulhof getroffen und die Franzosen wurden  für diesen Tag extra vom Unterricht freigestellt. Danach sind wir mit einem gemieteten Bus zum Schloss Chambord gefahren und haben eine Führung durch das Schloss erlebt. Anschließend waren eigentlich ein Picknick und eine Kanutour auf der Loire flussabwärts von Saint Laurent nach Saint Dyé geplant. Aufgrund von lang anhaltendem Regen mussten leider diese Programmpunkte ausfallen. Wir kehrten in die Schule zurück und nahmen in einem Klassenraum unser Picknick ein.  Danach betätigten wir uns sprtlich und spielten mit unseren corres Badminton.
+					</p>
+					<p>
+					Am Dienstag haben uns wieder um 08:00 Uhr auf dem Schulhof getroffen und sind 08:30 Uhr  mit einem Bus nach Tours gefahren, wo wir durch die ganze Stadt gelaufen sind, unter anderem durch die Kathedrale, welche eigentlich die gleichen Merkmale wie der Dom in Erfurt nach meiner Einschätzung aufweist, aber natürlich sind sie  nicht vollkommen gleich, denn jeder Architekt einer Kathedrale lässt sein eigenes  Wesen  in sein Werk einfließen. Nach einigen weiteren Kirchen, Fachwerkhäusern und dem berühmten historischen Marktplatz hatten wir ein wenig Freizeit. Danach brachte uns der Bus in das ungefähr 25 km entfernte Amboise . Dort kann man das ehemalige Wohnhaus von Leonardo da Vinci besichtigen und in dem sich anschließenden Park einige nachgebaute Erfindungen des Künstlers und Wissenschaftlers bewundern. Im Haus selbst findet man in fast jeder Ecke Erfindungen von ihm und jede Menge Sprüche und Lebensweisheiten. Daneben konnte man aber auch sein Bett, seine  Küche sowie sein Esszimmer sehen. Am Mittwoch durften wir alle in der ersten Stunde hospitieren. Danach ging es wieder ins CDI (Schulbibliothek), um weiter an unserem Projekt zu arbeiten. Anschließend hatten wir ein wenig Freizeit. Ab 14 Uhr besuchten wir das Haus der Magie, einschließlich einer 30 minütigen Zaubershow.
+					</p>
+					<p>
+					Am nächsten Tag sollte uns unser Bus nach Weimar zurückbringen. Inzwischen war die Loire durch die starken Regenfälle  angestiegen, einige umliegende Straßen bereits gesperrt. Zwei französische Lehrerinnen halfen uns, den deutschen Bus über Umwege an das collège zu bringen, und so konnten wir mit fast vierstündiger Verspätung Blois verlassen. Am nächsten Morgen hatten wir um 2.30 Uhr unsere Heimatstadt erreicht. Müde, doch mit vielen schönen Erinnerungen, machten wir uns auf den Heimweg. 
+					</p>
+					<p>
+					Die freundliche Unterstützung durch das Deutsch-Französische-Jugendwerk für unsere Schulpartnerschaftsbegegnung hat uns bei der Finanzierung der Reisekosten sehr geholfen. 
+					<br>Vielen Dank!
+					</p>
+					<p>
+					AU REVOIR, BLOIS
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="article" id="beitrag4">
+			<div class="navspace"></div>
+			<div class="beitragimg" id="beitragimg4"><img class="beitrag-top" src="temp/news/abiturpreis/bg.jpg"></div>
+			<div class="teasers" id="teasers4">
+				<div class="teasersinnen">
+					<img src="temp/news/abiturpreis/teaser.jpg" class="picture-overview" onclick="openGallery(4,1)">
+					<img src="temp/news/abiturpreis/gallerie/teaser2.jpg" class="picture-overview" onclick="openGallery(4,2)">
+				</div>
+			</div>
+			<div class="galleriebg" id="galleriebg4" onclick="closeGallery(4)"></div>
+			<div class="gallerie" id="gallerie4">
+				<img class="gimgm" src="temp/news/abiturpreis/bg.jpg" id="gimg41">
+				<img class="gimgr" src="temp/news/abiturpreis/gallerie/2.jpg" id="gimg42">
+			</div>
+			<div class="beitragtext">
+				<div class="inhalt" id="inhalt4">
+					<h2>Abiturpreis Sozialkunde</h2>
+					<p>
+					Daphne wurde heute mit dem 2. Platz beim Abiturpreis Sozialkunde der 
+					Deutschen Vereinigung für Politische Bildung (aller Thüringer Schulen) im Thüringer Landtag
+					ausgezeichnet. 
+					Aus der Pressemitteilung des Thüringer Lantages: <br>
+					"Die Vergabe des Abiturpreises 2016 fand heute (Dienstag) durch Landtagspräsident Christian Carius in Erfurt statt. 1. Preisträgerin ist 
+					Sophie Funke (Gemeinschaftsschule Jenaplan in Jena). Jeweils ein 2. Preis ging an 
+					Paul Böning (Albert-Schweitzer-Gymnasium Sömmerda) und 
+					Daphne Auer (Staatliches Gymnasium Johann Wolfgang von Goethe (Weimar). <br>
+					Die Laudatio hielt Toralf Schenk von der Deutschen Vereinigung für Politische Bildung E. V. - Landesverband Thüringen (DVPB). 
+					Der Abiturpreis wurde bereits in den Jahren 2014 und 2015 im Landtag überreicht.<br>
+					Der Thüringer Abiturpreis zählt zu den wichtigsten Auszeichnungen für unsere Schülerinnen und Schüler. Er ist ein Gradmesser unserer hohen 
+					Bildungsqualität und steht für Spitzenleistungen.“ Das erklärte heute (Dienstag) Landtagspräsident Christian Carius anlässlich der Verleihung des Abiturpreises 2016. 
+					Weitere Preisträger sind Theresa Läufer, Meri Amirow-Pogosian, Tom Lehmann und Laura Arnold.<br>
+					Der Abiturpreis ist ein Gemeinschaftsprojekt aus DVPB, Institut für Lehrerfortbildung Lehrplanentwicklung und Medien (Thillm), 
+					Professur für Politikdidaktik FSU Jena und der Landeszentrale für politische Bildung in Kooperation mit dem Landtag.<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="article" id="beitrag5">
+			<div class="navspace"></div>
+			<div class="beitragimg" id="beitragimg5"><img class="beitrag-top" src="temp/news/gutmannshausen/bg.jpg"></div>
+			<div class="teasers" id="teasers5">
+				<div class="teasersinnen">
+					<img src="temp/news/gutmannshausen/teaser.jpg" class="picture-overview" onclick="openGallery(5,1)">
+					<img src="temp/news/gutmannshausen/gallerie/teaser2.jpg" class="picture-overview" onclick="openGallery(5,2)">
+				</div>
+			</div>
+			<div class="galleriebg" id="galleriebg5" onclick="closeGallery(5)"></div>
+			<div class="gallerie" id="gallerie5">
+				<img class="gimgm" src="temp/news/gutmannshausen/bg.jpg" id="gimg51">
+				<img class="gimgr" src="temp/news/gutmannshausen/gallerie/2.jpg" id="gimg52">
+			</div>
+			<div class="beitragtext">
+				<div class="inhalt" id="inhalt5">
+					<h2>Circus Gaudimus in Gutmannshausen</h2>
+					<p>
+					Im Juni  standen für unseren Circus Gaudimus mehrere Auftritte an. Neben der Abitaufe waren die Schülerinnen und Schüler z.B. auch zum
+					Betriebsfest der AGRAR-Genossenschaft Gutmannshausen eingeladen. <br>
+					Wie immer konnten die Circus-Mitglieder ihre Professionalität nachweisen und zeigten 
+					den Gästen einen Auszug aus verschiednen Programmen. Akrobatik, Tanz, Einradfahren und 
+					viele andere Attraktionen wurden von den Gästen begeistert aufgenommen.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="article" id="beitrag6">
+			<div class="navspace"></div>
+			<div class="beitragimg" id="beitragimg6"><img class="beitrag-top" src="temp/news/omri-vitis/bg.jpg"></div>
+			<div class="teasers" id="teasers6">
+				<div class="teasersinnen">
+					<img src="temp/news/omri-vitis/teaser.jpg" class="picture-overview" onclick="openGallery(6,1)">
+					<img src="temp/news/omri-vitis/gallerie/teaser2.jpg" class="picture-overview" onclick="openGallery(6,2)">
+				</div>
+			</div>
+			<div class="galleriebg" id="galleriebg6" onclick="closeGallery(6)"></div>
+			<div class="gallerie" id="gallerie6">
+				<img class="gimgm" src="temp/news/omri-vitis/bg.jpg" id="gimg61">
+				<img class="gimgr" src="temp/news/omri-vitis/gallerie/2.jpg" id="gimg62">
+			</div>
+			<div class="beitragtext">
+				<div class="inhalt" id="inhalt6">
+					<h2>Omri Vitis & Guy Strier im Goethegymnasium</h2>
+					<p>
+					LIVE-Folk aus Israel in Thüringen<br>
+					Omri Vitis und Guy Strier<br>
+					Zwei junge Musiker aus Israel haben auf ihrer Konzerttour durch Thüringen mit öffentlichen Konzerten und Schulkonzerten, unterstützt durch die Thüringer Staatskanzlei Erfurt, auch 		das Goethegymnasium in Weimar besucht. Gestern erlebten 170 Schülerinnen und Schüler der 10. Klassen und der Kurse 11 an unserem Gymnasium ein besonderes Konzert mit selbst geschriebenen Songs der beiden Künstler aber auch mit Klassikern von Bob Dylan oder den Rolling Stones.<br>
+					Erfrischend ist die Vielseitigkeit der Texte und die herausragende musikalische Umsetzung des umfangreichen Repertoires. Alle Gitarristen unseres Gymnasiums sahen eine 		beispielhafte Umsetzung all dessen, was sie auch im täglichen Übungsprozess anstreben, gekoppelt mit wunderbaren gesanglichen Leistungen beider Künstler. Beide musizieren in mehreren Bands weltweit, sammeln täglich neue Erfahrungen, die sie wieder in ihren Liedern verarbeiten und erlangen so eine Professionalität, die uns alle beeindruckt hat. Gern laden wir sie im kommenden Schuljahr nochmals zu uns ein. Auch die Staatskanzlei ist hier nicht abgeneigt, wie man uns versprach. Schulunterricht mal als erfrischendes Konzert ist sehr, sehr empfehlenswert.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="article" id="beitrag7">
+			<div class="navspace"></div>
+			<div class="beitragimg" id="beitragimg7"><img class="beitrag-top" src="temp/news/volleyball/bg.jpg"></div>
+			<div class="teasers" id="teasers7">
+				<div class="teasersinnen">
+					<img src="temp/news/volleyball/teaser.jpg" class="picture-overview" onclick="openGallery(7,1)">
+					<img src="temp/news/volleyball/gallerie/teaser2.jpg" class="picture-overview" onclick="openGallery(7,2)">
+				</div>
+			</div>
+			<div class="galleriebg" id="galleriebg7" onclick="closeGallery(7)"></div>
+			<div class="gallerie" id="gallerie7">
+				<img class="gimgm" src="temp/news/volleyball/bg.jpg" id="gimg71">
+				<img class="gimgr" src="temp/news/volleyball/gallerie/2.jpg" id="gimg72">
+			</div>
+			<div class="beitragtext">
+				<div class="inhalt" id="inhalt7">
+					<h2>Podest-Platz erkämpft! </h2>
+					<p>
+					3. Platz beim Stadtausscheid - Jugend trainiert für Olympia - Volleyball
+					</p>
+					<p>
+					Am Mittwoch, den 21.09.2016 wurden in der Asbach-Halle die Stadtausscheide Jugend trainiert für Olympia in der Disziplin Volleyball ausgetragen. Das Goethegymnasium war mit 2 Mannschaften in der Wettkampfklasse II vertreten, von der leider nur eine vollzählig erschienen war. So lag es an den Jungen der Klassenstufe 8 um Teamkapitän Felix Casper eine Platzierung gegen die Konkurrenz von Schiller und Humboldt zu erkämpfen.
+					</p>
+					<p>
+					Sehr konzentriert und fokussiert wurde zunächst das Spiel der beiden gegnerischen Mannschaften verfolgt, welches das Schillergymnasium im entscheidenden dritten Satz knapp für sich entscheiden konnte, um dann im Anschluss sogleich auf unsere Mannschaft zu treffen. Diese präsentierte sich als sehr geschlossen und strukturiert. Die Teammitglieder motivierten sich immer wieder gegenseitig. Durch diese Geschlossenheit und technisch schon gut ausgeprägte Spielweise konnte man bis zum Spielstand von 11:12 gegen die körperlich überlegene Mannschaft auf der Gegenseite gut mithalten. Vor allem Anton Pietschmann brachte die Mannschaft durch seine guten Aufschläge immer wieder zurück ins Spiel. Nach einer Reihe von Fehlern und durch die Angriffsschläge der hochgewachsenen Netzspieler der Gegner ging der Satz dann leider 18:25 verloren.
+					</p>
+					<p>
+					Zum Seitenwechsel nahm der Teamkapitän zwei personelle Veränderungen vor und wechselte die beiden Ergänzungsspieler Aidan Crap und Jonathan Mönch ein. Doch auch sie vermochten es nicht im zweiten Satz die entscheidenden Akzente zu setzen und das Spiel ging mit 0:2 Sätzen verloren.
+					</p>
+					<p>
+					Die Kernmannschaft mit Fabian Berger, Josef Schaarschmidt, Vicent Koch, Richard Obst, Lukas Hildebrandt und Spielführer Felix Casper war trotz der Niederlage entschlossen, gegen das Humboldtgymnsium den zweiten Platz zu erkämpfen. Abermals wurden auf technisch schon sehr hohem Niveau und mittels einer guten Abstimmung viele Punkte gegen den abermals vor allem körperlich überlegenen Gegner erkämpft, so dass die Partie knapp mit jeweils 20:25 und 21:25 verloren ging.
+					</p>
+					<p>
+					Enttäuscht aber dennoch stolz auf eine tolle Mannschaftsleistung nahmen die Spieler die Ehrung für ihre Platzierung an und blicken nun gemeinsam in Richtung 2017, wo man sich mit einem höheren Altersdurchschnitt wesentlich größere Chancen in der WK II ausrechnet.
+					</p>
+					<p>
+					T. Kretschmer
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="article" id="beitrag8">
+			<div class="navspace"></div>
+			<div class="beitragimg" id="beitragimg8"><img class="beitrag-top" src="temp/news/anders/bg.jpg"></div>
+			<div class="teasers" id="teasers8">
+				<div class="teasersinnen">
+					<img src="temp/news/anders/teaser.jpg" class="picture-overview" onclick="openGallery(8,1)">
+				</div>
+			</div>
+			<div class="galleriebg" id="galleriebg8" onclick="closeGallery(8)"></div>
+			<div class="gallerie" id="gallerie8">
+				<img class="gimgm" src="temp/news/anders/bg.jpg" id="gimg81">
+			</div>
+			<div class="beitragtext">
+				<div class="inhalt" id="inhalt8">
+					<h2>Vorstellung der Berufsberaterin Frau Anders</h2>
+					<p>
+					Individuelle Beratung zur Studien- und Berufswahl, Entscheidungshilfe<br>
+					- Studien- und Berufswahltests<br>
+					- Information zu Studium, Ausbildung und Arbeitsmarktperspektiven<br>
+					- Informationen über Zulassungsverfahren und Bewerbungsmodalitäten
+					der Hochschulen
+					- Vermittlung in duale Studiengänge und Berufsausbildung<br>
+					- Hilfe bei der Erstellung der Bewerbungsunterlagen<br>
+					- Finanzielle Unterstützung der Bewerbungen für duales Studium
+					und Berufsausbildung<br>
+					- Informationen zu Überbrückungsmöglichkeiten, auch im Ausland<br>
+					- gezielte Internetrecherche zur Studien- und Berufsfindung<br>
+					<br>
+					Antje Anders, Studien- und Berufsberaterin<br>
+					Tel.: 03643 - 451 1520 (Durchwahl)<br>
+					0800 4 5555 00 (kostenfreie Hotline)<br>
+					Email: Antje.Anders2@arbeitsagentur.de<br>
+					Agentur für Arbeit Weimar<br>
+					E.-Rosenthal-Str. 43<br>
+					99423 Weimar<br>
+					Zimmer 249
+				</div>
+				<div class="gallerie" id="gallerie8">
+					<img src="temp/news/anders/teaser.jpg" class="picture-overview">
+				</div>
+			</div>
 		</div>
 	</main>
 	<div class="cookies" id="cookies">

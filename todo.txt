@@ -1,8 +1,0 @@
--Navigation: current color -> fff
--classnames ändern
--Effekte, die nur auf den "Hintergrund" angewendet werden?
--Slideshow reparieren
-Slideshow2 in nav einfügen
--Nav-Schriftgröße verringern
--Nav-Icons hinzufügen, Downloads: Download-Icon
--Beitrag öffnen: float right; width 0% -> 100%; Bars -> Zurück-Pfeil
